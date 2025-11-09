@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minicurso de Machine Learning para Engenheiros</title>
+  <meta name="description" content="Página oficial do minicurso com acesso a códigos, notebooks e materiais." />
+  <link rel="icon" href="/favicon.png" />
+  <style>
+    :root {
+      --bg: #0a4c8a;         /* azul do tema */
+      --bg-2: #0d3e72;       /* azul mais escuro para cartões */
+      --text: #ffffff;       /* texto sobre azul */
+      --muted: #d7e3f2;      /* texto secundário */
+      --accent: #ffd700;     /* dourado para links */
+      --shadow: rgba(0,0,0,.2);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg) 0%, #083b6b 100%);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(10,76,138,.9); backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav { max-width: var(--maxw); margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 700; letter-spacing:.2px; }
+    .menu { display: flex; gap: 18px; flex-wrap: wrap; }
+    .menu a { font-weight: 600; opacity:.95; }
+
+    .hero { max-width: var(--maxw); margin: 40px auto 20px; padding: 20px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px var(--shadow);
+      padding: 28px;
+    }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(24px, 4vw, 40px); line-height: 1.1; }
+    .hero p { margin: 0 0 18px; color: var(--muted); }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+
+    .grid { max-width: var(--maxw); margin: 14px auto 60px; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: var(--bg-2);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 6px 18px var(--shadow);
+    }
+    .card h3 { margin-top: 8px; margin-bottom: 8px; }
+    .card p { margin-top: 0; color: var(--muted); }
+
+    .list-clean { list-style: none; padding-left: 0; margin: 0; }
+    .list-clean li { padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,.12); }
+    .list-clean li:last-child { border-bottom: 0; }
+
+    .section { max-width: var(--maxw); margin: 0 auto 60px; padding: 0 20px; }
+    .section h2 { margin-bottom: 10px; }
+    .muted { color: var(--muted); }
+    code { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); padding: 2px 6px; border-radius: 6px; }
+
+    footer { border-top: 1px solid rgba(255,255,255,.1); padding: 22px; text-align: center; color: var(--muted); }
+
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; background: rgba(0,0,0,.3); padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(255,255,255,.18); }
+
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand">ML para Engenheiros</div>
+      <div class="menu">
+        <a href="#materiais">Materiais</a>
+        <a href="#notebooks">Notebooks</a>
+        <a href="#plano">Plano de aula</a>
+        <a href="#como-usar">Como usar</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Minicurso de Machine Learning para Engenheiros</h1>
+        <p>Repositório público com códigos, notebooks e dados usados em aula. Esta página segue o tema visual <em>fundo azul</em> com <em>letras brancas</em>, alinhado ao seu Google Site.</p>
+        <div class="badges">
+          <span class="badge">🧠 Fundamentos de ML</span>
+          <span class="badge">📓 Jupyter/Colab</span>
+          <span class="badge">🔧 Engenharia</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Links rápidos</h3>
+        <ul class="list-clean">
+          <li>📦 Repositório: <a id="repo-link" href="https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}" target="_blank">github.com/{{GITHUB_USER}}/{{REPO_NAME}}</a></li>
+          <li>📁 Pasta <strong>notebooks</strong>: <a href="https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/tree/main/notebooks" target="_blank">/notebooks</a></li>
+          <li>📁 Pasta <strong>dados</strong>: <a href="https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/tree/main/dados" target="_blank">/dados</a></li>
+        </ul>
+        <p class="muted" style="margin-top:8px">Substitua <code>{{GITHUB_USER}}</code> e <code>{{REPO_NAME}}</code> e publique via GitHub Pages.</p>
+      </div>
+    </section>
+
+    <section id="materiais" class="grid">
+      <article class="card">
+        <h3>🧠 Conceitos base</h3>
+        <p>Slides e resumos dos tópicos fundamentais.</p>
+        <ul class="list-clean">
+          <li><a href="docs/slides-introducao.pdf" target="_blank">Introdução à IA e ML (PDF)</a></li>
+          <li><a href="docs/slides-classificacao.pdf" target="_blank">Classificação & Regressão (PDF)</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>📓 Notebooks</h3>
+        <p>Exemplos práticos com dados e modelos.</p>
+        <ul class="list-clean">
+          <li><a href="#notebooks">Lista automática de notebooks</a></li>
+          <li class="muted">Dica: cada notebook pode ter link “Abrir no Colab”.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>🔗 Repositório completo</h3>
+        <p>Baixe tudo ou acompanhe as issues.</p>
+        <ul class="list-clean">
+          <li><a href="https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}" target="_blank">GitHub do projeto</a></li>
+          <li><a href="https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/issues" target="_blank">Issues & Roadmap</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="notebooks" class="section">
+      <h2>Lista de Notebooks</h2>
+      <p class="muted">Esta lista é gerada automaticamente via GitHub API a partir da pasta <code>/notebooks</code>.</p>
+      <div id="nb-list" class="grid" style="margin-top:14px"></div>
+    </section>
+
+    <section id="plano" class="section">
+      <h2>Plano de Aula (resumo)</h2>
+      <ul class="list-clean">
+        <li><strong>Parte 1:</strong> O que é IA/ML? Problemas típicos em engenharia.</li>
+        <li><strong>Parte 2:</strong> Pré-processamento, validação e métricas.</li>
+        <li><strong>Parte 3:</strong> Modelos base e overfitting/underfitting.</li>
+        <li><strong>Parte 4:</strong> Demonstração guiada em notebook.</li>
+      </ul>
+      <p class="muted">Se desejar, substitua este bloco por um HTML exportado do seu plano LaTeX para manter a mesma organização da página original.</p>
+    </section>
+
+    <section id="como-usar" class="section">
+      <h2>Como usar os materiais</h2>
+      <ol>
+        <li>Para baixar tudo: clique em <span class="kbd">Code</span> → <span class="kbd">Download ZIP</span>.</li>
+        <li>Para clonar:
+          <pre><code>git clone https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}.git</code></pre>
+        </li>
+        <li>Para abrir no Colab (exemplo):
+          <pre><code>https://colab.research.google.com/github/{{GITHUB_USER}}/{{REPO_NAME}}/blob/main/notebooks/SEU_NOTEBOOK.ipynb</code></pre>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p class="muted">Dúvidas sobre os códigos ou materiais: abra uma <a href="https://github.com/{{GITHUB_USER}}/{{REPO_NAME}}/issues" target="_blank">issue</a> no GitHub.</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="ano"></span> • Minicurso de ML para Engenheiros • Publicado com GitHub Pages
+  </footer>
+
+  <script>
+    // ===== Configuração: substitua pelo seu usuário e repositório =====
+    const GITHUB_USER = "{{SauloSilvestreCastro}}";   // ex.: "saulocastro"
+    const REPO_NAME   = "{{minicurso-ml-engenheiros}}";     // ex.: "minicurso-ml-engenheiros"
+    // ================================================================
+
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Preenche link do repositório com as variáveis (caso o usuário esqueça de trocar no HTML)
+    const repoLink = document.getElementById('repo-link');
+    if (repoLink) repoLink.href = `https://github.com/${GITHUB_USER}/${REPO_NAME}`;
+
+    // Lista automática dos notebooks em /notebooks usando a GitHub API
+    async function carregarNotebooks() {
+      const container = document.getElementById('nb-list');
+      if (!container) return;
+
+      try {
+        const resp = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${REPO_NAME}/contents/notebooks`);
+        if (!resp.ok) throw new Error('Não foi possível ler a pasta /notebooks');
+        const itens = await resp.json();
+        const nbs = itens.filter(x => x.type === 'file' && x.name.endsWith('.ipynb'));
+
+        if (nbs.length === 0) {
+          container.innerHTML = `<div class="card"><p class="muted">Nenhum notebook encontrado em <code>/notebooks</code>.</p></div>`;
+          return;
+        }
+
+        for (const nb of nbs) {
+          const nome = nb.name;
+          const ghUrl = nb.html_url;
+          const colabUrl = `https://colab.research.google.com/github/${GITHUB_USER}/${REPO_NAME}/blob/main/notebooks/${encodeURIComponent(nome)}`;
+          const nbvUrl = `https://nbviewer.org/github/${GITHUB_USER}/${REPO_NAME}/blob/main/notebooks/${encodeURIComponent(nome)}`;
+
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>📓 ${nome}</h3>
+            <p class="muted">Abra no Colab para executar, ou visualize no nbviewer.</p>
+            <ul class="list-clean">
+              <li><a href="${colabUrl}" target="_blank">▶️ Abrir no Colab</a></li>
+              <li><a href="${nbvUrl}" target="_blank">👁️ Visualizar (nbviewer)</a></li>
+              <li><a href="${ghUrl}" target="_blank">🐙 Ver no GitHub</a></li>
+            </ul>
+          `;
+          container.appendChild(card);
+        }
+      } catch (e) {
+        console.error(e);
+        container.innerHTML = `<div class="card"><p class="muted">Erro ao carregar a lista de notebooks. Verifique se o repositório é público e se a pasta <code>/notebooks</code> existe.</p></div>`;
+      }
+    }
+
+    carregarNotebooks();
+  </script>
+</body>
+</html>
